@@ -3,6 +3,24 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.75.0
+    created: "2023-04-08T03:14:37.80576399Z"
+    description: OpenTelemetry Collector Helm chart for Kubernetes
+    digest: 047b6afdb308b8cf6f1a0c4618456120addb32375722caa312840994d60bba28
+    home: https://opentelemetry.io/
+    icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
+    maintainers:
+    - name: dmitryax
+    - name: TylerHelmuth
+    name: opentelemetry-collector
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-collector
+    - https://github.com/open-telemetry/opentelemetry-collector-contrib
+    type: application
+    urls:
+    - https://github.com/Leandroschwab/opentelemetry-helm-charts/releases/download/opentelemetry-collector-0.53.0/opentelemetry-collector-0.53.0.tgz
+    version: 0.53.0
+  - apiVersion: v2
+    appVersion: 0.75.0
     created: "2023-04-06T03:05:52.332048923Z"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: d18edb4f01eb0a7dd3bcc0dd0094a9174d82062e84012c793f62cb5188b15f61
@@ -1142,6 +1160,41 @@ entries:
   opentelemetry-demo:
   - apiVersion: v2
     appVersion: 1.3.1
+    created: "2023-04-08T03:14:38.103611847Z"
+    dependencies:
+    - condition: opentelemetry-collector.enabled
+      name: opentelemetry-collector
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+      version: 0.52.1
+    - condition: jaeger.enabled
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      version: 0.69.1
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 20.2.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.52.8
+    description: opentelemetry demo helm chart
+    digest: 42313a5740f29eaea655ca73469e1068bbce3a08fc5eb6e5911cd3129357d5a5
+    home: https://opentelemetry.io/
+    icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
+    maintainers:
+    - name: dmitryax
+    - name: puckpuck
+    - name: tylerhelmuth
+    name: opentelemetry-demo
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-demo
+    type: application
+    urls:
+    - https://github.com/Leandroschwab/opentelemetry-helm-charts/releases/download/opentelemetry-demo-0.21.1/opentelemetry-demo-0.21.1.tgz
+    version: 0.21.1
+  - apiVersion: v2
+    appVersion: 1.3.1
     created: "2023-04-06T03:05:52.521051334Z"
     dependencies:
     - condition: opentelemetry-collector.enabled
@@ -1656,4 +1709,4 @@ entries:
     urls:
     - https://github.com/open-telemetry/opentelemetry-helm-charts/releases/download/opentelemetry-operator-0.1.0/opentelemetry-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-06T03:05:52.677925415Z"
+generated: "2023-04-08T03:14:38.104332441Z"
